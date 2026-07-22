@@ -1,151 +1,197 @@
-window.CRAFT_DATA["ランプ錬金職人"] = {
-  "呪文発動速度": [
+window.CRAFT_DATA["道具鍛冶職人"] = {
+  "ブーメラン": [
     {
-      name: "呪文発動速度 +6% (成功)",
-      level: "錬金Lv 40",
+      name: "輝天のブーメラン",
+      level: "装備Lv 115",
       materials: [
-        { name: "まほうのせいすい", count: 5, shop: "両方", place: "各道具屋", defaultPrice: 500 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 },
-        { name: "ようせいのひだね", count: 5, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
+        { name: "フォレスト鉱石", count: 30, shop: "バザー", defaultPrice: 14000 },
+        { name: "デモニウム鉱石", count: 15, shop: "バザー", defaultPrice: 8000 },
+        { name: "超ようせいのひだね", count: 6, shop: "バザー", defaultPrice: 32000 }
       ]
     },
     {
-      name: "呪文発動速度 +3% (成功)",
-      level: "錬金Lv 25",
+      name: "パルミラヴーメラン",
+      level: "装備Lv 110",
       materials: [
-        { name: "まほうの小ビン", count: 10, shop: "両方", place: "各道具屋", defaultPrice: 60 },
-        { name: "汗と涙の結晶", count: 4, shop: "バザー", defaultPrice: 3800 }
+        { name: "プラチナ鉱石", count: 30, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "デモニウム鉱石", count: 12, shop: "バザー", defaultPrice: 8000 },
+        { name: "超ようせいのひだね", count: 5, shop: "バザー", defaultPrice: 32000 }
+      ]
+    },
+    {
+      name: "魔導士のブーメラン",
+      level: "装備Lv 105",
+      materials: [
+        { name: "プラチナ鉱石", count: 25, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ゴールドストーン", count: 15, shop: "バザー", defaultPrice: 2000 },
+        { name: "ようせいのひだね", count: 12, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
+      ]
+    },
+    {
+      name: "プロミネンス",
+      level: "装備Lv 100",
+      materials: [
+        { name: "プラチナ鉱石", count: 22, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ゴールドストーン", count: 12, shop: "バザー", defaultPrice: 2000 },
+        { name: "ようせいのひだね", count: 10, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
       ]
     }
   ],
-  "呪文耐性": [
+  "ツメ": [
     {
-      name: "こうげき呪文ダメージ減 +6% (成功)",
-      level: "錬金Lv 40",
+      name: "輝天のツメ",
+      level: "装備Lv 115",
       materials: [
-        { name: "せいすい", count: 5, shop: "両方", place: "各教会売店", defaultPrice: 20 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
+        { name: "フォレスト鉱石", count: 30, shop: "バザー", defaultPrice: 14000 },
+        { name: "ドラゴン骨", count: 15, shop: "バザー", defaultPrice: 5000 },
+        { name: "超ようせいのひだね", count: 6, shop: "バザー", defaultPrice: 32000 }
+      ]
+    },
+    {
+      name: "ゴッドクロー",
+      level: "装備Lv 110",
+      materials: [
+        { name: "プラチナ鉱石", count: 28, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ドラゴン骨", count: 12, shop: "バザー", defaultPrice: 5000 },
+        { name: "超ようせいのひだね", count: 5, shop: "バザー", defaultPrice: 32000 }
+      ]
+    },
+    {
+      name: "悪鬼のツメ",
+      level: "装備Lv 105",
+      materials: [
+        { name: "プラチナ鉱石", count: 24, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "大きな骨", count: 20, shop: "バザー", defaultPrice: 1500 },
+        { name: "ようせいのひだね", count: 12, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
+      ]
+    },
+    {
+      name: "呪眼のツメ",
+      level: "装備Lv 100",
+      materials: [
+        { name: "プラチナ鉱石", count: 20, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "大きな骨", count: 16, shop: "バザー", defaultPrice: 1500 },
+        { name: "ようせいのひだね", count: 10, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
       ]
     }
   ],
-  "属性耐性": [
+  "ハンマー": [
     {
-      name: "炎のダメージ減 +14% (成功)",
-      level: "錬金Lv 40",
+      name: "輝天のハンマー",
+      level: "装備Lv 115",
       materials: [
-        { name: "もりの石", count: 3, shop: "バザー", defaultPrice: 4000 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
+        { name: "フォレスト鉱石", count: 30, shop: "バザー", defaultPrice: 14000 },
+        { name: "デモニウム鉱石", count: 15, shop: "バザー", defaultPrice: 8000 },
+        { name: "超ようせいのひだね", count: 6, shop: "バザー", defaultPrice: 32000 }
       ]
     },
     {
-      name: "氷のダメージ減 +14% (成功)",
-      level: "錬金Lv 40",
+      name: "メガトンハンマー",
+      level: "装備Lv 110",
       materials: [
-        { name: "こおりのすな", count: 3, shop: "バザー", defaultPrice: 4000 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
+        { name: "プラチナ鉱石", count: 30, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ヘビーメタル", count: 15, shop: "バザー", defaultPrice: 6000 },
+        { name: "超ようせいのひだね", count: 5, shop: "バザー", defaultPrice: 32000 }
       ]
     },
     {
-      name: "風のダメージ減 +14% (成功)",
-      level: "錬金Lv 40",
+      name: "魔犬のツインハンマー",
+      level: "装備Lv 105",
       materials: [
-        { name: "ふんわりひだね", count: 3, shop: "バザー", defaultPrice: 4000 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
-      ]
-    },
-    {
-      name: "雷のダメージ減 +14% (成功)",
-      level: "錬金Lv 40",
-      materials: [
-        { name: "雷鳴の玉", count: 3, shop: "バザー", defaultPrice: 5000 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
-      ]
-    },
-    {
-      name: "光のダメージ減 +14% (成功)",
-      level: "錬金Lv 40",
-      materials: [
-        { name: "ホーリーストーン", count: 3, shop: "バザー", defaultPrice: 4500 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
-      ]
-    },
-    {
-      name: "闇のダメージ減 +14% (成功)",
-      level: "錬金Lv 40",
-      materials: [
-        { name: "あやかしのつゆ", count: 3, shop: "バザー", defaultPrice: 4500 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
+        { name: "プラチナ鉱石", count: 25, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ヘビーメタル", count: 12, shop: "バザー", defaultPrice: 6000 },
+        { name: "ようせいのひだね", count: 12, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
       ]
     }
   ],
-  "状態異常耐性": [
+  "ヤリ": [
     {
-      name: "まどろみガード +14% (成功)",
-      level: "錬金Lv 35",
+      name: "輝天の槍",
+      level: "装備Lv 115",
       materials: [
-        { name: "目覚まし花", count: 5, shop: "両方", place: "各素材屋", defaultPrice: 120 },
-        { name: "汗と涙の結晶", count: 6, shop: "バザー", defaultPrice: 3800 }
+        { name: "フォレスト鉱石", count: 30, shop: "バザー", defaultPrice: 14000 },
+        { name: "デモニウム鉱石", count: 15, shop: "バザー", defaultPrice: 8000 },
+        { name: "超ようせいのひだね", count: 6, shop: "バザー", defaultPrice: 32000 }
       ]
     },
     {
-      name: "封印ガード +14% (成功)",
-      level: "錬金Lv 35",
+      name: "オウマガキ",
+      level: "装備Lv 110",
       materials: [
-        { name: "マホセキの粉", count: 5, shop: "バザー", defaultPrice: 1500 },
-        { name: "汗と涙の結晶", count: 6, shop: "バザー", defaultPrice: 3800 }
+        { name: "プラチナ鉱石", count: 30, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ドラゴン骨", count: 15, shop: "バザー", defaultPrice: 5000 },
+        { name: "超ようせいのひだね", count: 5, shop: "バザー", defaultPrice: 32000 }
       ]
     },
     {
-      name: "混乱ガード +14% (成功)",
-      level: "錬金Lv 35",
+      name: "轟雷のやり",
+      level: "装備Lv 105",
       materials: [
-        { name: "よごれたほうたい", count: 5, shop: "バザー", defaultPrice: 800 },
-        { name: "汗と涙の結晶", count: 6, shop: "バザー", defaultPrice: 3800 }
-      ]
-    },
-    {
-      name: "魅了ガード +10% (成功)",
-      level: "錬金Lv 40",
-      materials: [
-        { name: "天使のすず", count: 5, shop: "両方", place: "各素材屋", defaultPrice: 120 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
-      ]
-    }
-  ],
-  "魔力・回復": [
-    {
-      name: "こうげき魔力 +15 (成功)",
-      level: "錬金Lv 40",
-      materials: [
-        { name: "ダークマター", count: 2, shop: "バザー", defaultPrice: 18000 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
-      ]
-    },
-    {
-      name: "かいふく魔力 +15 (成功)",
-      level: "錬金Lv 40",
-      materials: [
-        { name: "せいなるはいすい", count: 2, shop: "バザー", defaultPrice: 12000 },
-        { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 }
+        { name: "プラチナ鉱石", count: 26, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "雷鳴の玉", count: 12, shop: "バザー", defaultPrice: 5000 },
+        { name: "ようせいのひだね", count: 12, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
       ]
     }
   ],
   "職人道具": [
     {
-      name: "超ランプのすうじ",
+      name: "超鍛冶ハンマー",
       level: "職人Lv 40",
       materials: [
-        { name: "プラチナ鉱石", count: 20, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
-        { name: "ようせいのひだね", count: 10, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 },
+        { name: "プラチナ鉱石", count: 15, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ゴールドストーン", count: 8, shop: "バザー", defaultPrice: 2000 },
         { name: "超ようせいのひだね", count: 2, shop: "バザー", defaultPrice: 32000 }
       ]
     },
     {
-      name: "光のランプ",
+      name: "光の鍛冶ハンマー",
       level: "職人Lv 45",
       materials: [
         { name: "光のたね", count: 15, shop: "バザー", defaultPrice: 4000 },
         { name: "超ようせいのひだね", count: 3, shop: "バザー", defaultPrice: 32000 }
+      ]
+    },
+    {
+      name: "超フライパン",
+      level: "職人Lv 40",
+      materials: [
+        { name: "プラチナ鉱石", count: 15, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "大きな貝ガラ", count: 10, shop: "両方", place: "ジュレット素材屋", defaultPrice: 240 },
+        { name: "超ようせいのひだね", count: 2, shop: "バザー", defaultPrice: 32000 }
+      ]
+    },
+    {
+      name: "光のフライパン",
+      level: "職人Lv 45",
+      materials: [
+        { name: "光のたね", count: 15, shop: "バザー", defaultPrice: 4000 },
+        { name: "超ようせいのひだね", count: 3, shop: "バザー", defaultPrice: 32000 }
+      ]
+    }
+  ],
+  "家具・庭具": [
+    {
+      name: "プラチナのイス",
+      level: "職人Lv 20",
+      materials: [
+        { name: "プラチナ鉱石", count: 5, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "きたないきぬのふく", count: 2, shop: "バザー", defaultPrice: 100 }
+      ]
+    },
+    {
+      name: "金のタンス",
+      level: "職人Lv 30",
+      materials: [
+        { name: "ゴールドストーン", count: 10, shop: "バザー", defaultPrice: 2000 },
+        { name: "プラチナ鉱石", count: 10, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 }
+      ]
+    },
+    {
+      name: "プラチナの大きな置物",
+      level: "職人Lv 35",
+      materials: [
+        { name: "プラチナ鉱石", count: 20, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+        { name: "ウルベア金貨", count: 2, shop: "バザー", defaultPrice: 2000 }
       ]
     }
   ]
