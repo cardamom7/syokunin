@@ -96,7 +96,7 @@
       cursor: not-allowed;
     }
 
-    /* 選択済みサマリーバナー（1行でコンパクトに表示） */
+    /* 選択済みサマリーバナー */
     .summary-banner {
       display: none;
       justify-content: space-between;
@@ -195,7 +195,7 @@
     .mat-detail {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
       font-size: 0.7rem;
       margin-bottom: 4px;
     }
@@ -219,6 +219,7 @@
 
     .shop-info {
       color: #64748b;
+      margin-left: 2px;
     }
 
     /* 価格入力フォーム */
@@ -251,12 +252,6 @@
       border-radius: 4px;
       color: #f8fafc;
       text-align: right;
-    }
-
-    .price-input:disabled {
-      background: #0f172a;
-      color: #64748b;
-      border-color: transparent;
     }
 
     .subtotal {
@@ -341,7 +336,7 @@
 <div class="container">
   <h1>DQ10職人素材<br>原価＆利益チェッカー</h1>
 
-  <!-- 選択された設定のサマリー（初期状態は隠す） -->
+  <!-- 選択された設定のサマリー -->
   <div class="summary-banner" id="summary-banner">
     <span class="summary-text" id="summary-text">選択中: -</span>
     <button class="btn-change" onclick="toggleSelectionForm(true)">変更</button>
@@ -409,7 +404,7 @@
 </div>
 
 <script>
-  // --- DQ10 データベース ---
+  // --- DQ10 データベース（shop: "両方" / "店" / "バザー" 対応） ---
   const CRAFT_DATA = {
     "木工職人": {
       "弓": [
@@ -437,8 +432,8 @@
           level: "装備Lv 100",
           materials: [
             { name: "古代樹の化石", count: 24, shop: "バザー", defaultPrice: 8500 },
-            { name: "大きな貝ガラ", count: 30, shop: "店", place: "ジュレット素材屋", price: 240 },
-            { name: "ようせいのひだね", count: 16, shop: "店", place: "各ギルド素材屋", price: 1000 }
+            { name: "大きな貝ガラ", count: 30, shop: "両方", place: "ジュレット素材屋", defaultPrice: 240 },
+            { name: "ようせいのひだね", count: 16, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
           ]
         }
       ],
@@ -468,8 +463,8 @@
           level: "職人Lv 40",
           materials: [
             { name: "氷の樹木", count: 15, shop: "バザー", defaultPrice: 350 },
-            { name: "プラチナ鉱石", count: 10, shop: "店", place: "住宅村・素材屋", price: 360 },
-            { name: "ようせいのひだね", count: 8, shop: "店", place: "各ギルド素材屋", price: 1000 }
+            { name: "プラチナ鉱石", count: 10, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+            { name: "ようせいのひだね", count: 8, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
           ]
         },
         {
@@ -477,18 +472,18 @@
           level: "職人Lv 40",
           materials: [
             { name: "燃える大樹のけむり", count: 15, shop: "バザー", defaultPrice: 400 },
-            { name: "プラチナ鉱石", count: 10, shop: "店", place: "住宅村・素材屋", price: 360 },
-            { name: "ようせいのひだね", count: 8, shop: "店", place: "各ギルド素材屋", price: 1000 }
+            { name: "プラチナ鉱石", count: 10, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+            { name: "ようせいのひだね", count: 8, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
           ]
         },
         {
           name: "天使のルアー",
           level: "職人Lv 40",
           materials: [
-            { name: "天使のすず", count: 10, shop: "店", place: "各素材屋", price: 120 },
+            { name: "天使のすず", count: 10, shop: "両方", place: "各素材屋", defaultPrice: 120 },
             { name: "シャークフォーム", count: 5, shop: "バザー", defaultPrice: 1200 },
-            { name: "プラチナ鉱石", count: 8, shop: "店", place: "住宅村・素材屋", price: 360 },
-            { name: "ようせいのひだね", count: 6, shop: "店", place: "各ギルド素材屋", price: 1000 }
+            { name: "プラチナ鉱石", count: 8, shop: "両方", place: "住宅村素材屋", defaultPrice: 360 },
+            { name: "ようせいのひだね", count: 6, shop: "両方", place: "ギルド素材屋", defaultPrice: 1000 }
           ]
         }
       ]
@@ -499,7 +494,7 @@
           name: "ロードリーコンボイ",
           level: "装備Lv 115",
           materials: [
-            { name: "シルク草", count: 40, shop: "店", place: "各素材屋", price: 240 },
+            { name: "シルク草", count: 40, shop: "両方", place: "各素材屋", defaultPrice: 240 },
             { name: "妖精の綿花", count: 20, shop: "バザー", defaultPrice: 1800 },
             { name: "あまつのミスト", count: 6, shop: "バザー", defaultPrice: 15000 },
             { name: "超さいほうのひ糸", count: 6, shop: "バザー", defaultPrice: 30000 }
@@ -509,7 +504,7 @@
           name: "ワンダラーズマンテル",
           level: "装備Lv 115",
           materials: [
-            { name: "おびえのすず", count: 30, shop: "店", place: "各素材屋", price: 240 },
+            { name: "おびえのすず", count: 30, shop: "両方", place: "各素材屋", defaultPrice: 240 },
             { name: "妖精の綿花", count: 20, shop: "バザー", defaultPrice: 1800 },
             { name: "超さいほうのひ糸", count: 6, shop: "バザー", defaultPrice: 30000 }
           ]
@@ -520,7 +515,7 @@
           name: "ロードリーハット",
           level: "装備Lv 115",
           materials: [
-            { name: "シルク草", count: 30, shop: "店", place: "各素材屋", price: 240 },
+            { name: "シルク草", count: 30, shop: "両方", place: "各素材屋", defaultPrice: 240 },
             { name: "あまつのミスト", count: 4, shop: "バザー", defaultPrice: 15000 },
             { name: "超さいほうのひ糸", count: 5, shop: "バザー", defaultPrice: 30000 }
           ]
@@ -531,7 +526,7 @@
           name: "ロードリーローブ下",
           level: "装備Lv 115",
           materials: [
-            { name: "シルク草", count: 35, shop: "店", place: "各素材屋", price: 240 },
+            { name: "シルク草", count: 35, shop: "両方", place: "各素材屋", defaultPrice: 240 },
             { name: "妖精の綿花", count: 15, shop: "バザー", defaultPrice: 1800 },
             { name: "超さいほうのひ糸", count: 5, shop: "バザー", defaultPrice: 30000 }
           ]
@@ -545,17 +540,17 @@
           level: "職人Lv 40",
           materials: [
             { name: "しもふりにく", count: 3, shop: "バザー", defaultPrice: 18000 },
-            { name: "ピリからゼリー", count: 2, shop: "店", place: "オルフェア素材屋", price: 120 },
-            { name: "デリシャスオイル", count: 12, shop: "店", place: "オルフェア素材屋", price: 200 }
+            { name: "ピリからゼリー", count: 2, shop: "両方", place: "オルフェア素材屋", defaultPrice: 120 },
+            { name: "デリシャスオイル", count: 12, shop: "両方", place: "オルフェア素材屋", defaultPrice: 200 }
           ]
         },
         {
           name: "スマッシュポテト",
           level: "職人Lv 30",
           materials: [
-            { name: "ジャンボポテト", count: 5, shop: "店", place: "オルフェア素材屋", price: 120 },
-            { name: "ピュアスノー", count: 3, shop: "店", place: "オルフェア素材屋", price: 120 },
-            { name: "デリシャスオイル", count: 6, shop: "店", place: "オルフェア素材屋", price: 200 }
+            { name: "ジャンボポテト", count: 5, shop: "両方", place: "オルフェア素材屋", defaultPrice: 120 },
+            { name: "ピュアスノー", count: 3, shop: "両方", place: "オルフェア素材屋", defaultPrice: 120 },
+            { name: "デリシャスオイル", count: 6, shop: "両方", place: "オルフェア素材屋", defaultPrice: 200 }
           ]
         },
         {
@@ -563,8 +558,8 @@
           level: "職人Lv 35",
           materials: [
             { name: "しもふりにく", count: 2, shop: "バザー", defaultPrice: 18000 },
-            { name: "ジャンボポテト", count: 4, shop: "店", place: "オルフェア素材屋", price: 120 },
-            { name: "デリシャスオイル", count: 8, shop: "店", place: "オルフェア素材屋", price: 200 }
+            { name: "ジャンボポテト", count: 4, shop: "両方", place: "オルフェア素材屋", defaultPrice: 120 },
+            { name: "デリシャスオイル", count: 8, shop: "両方", place: "オルフェア素材屋", defaultPrice: 200 }
           ]
         },
         {
@@ -573,16 +568,16 @@
           materials: [
             { name: "かいしんのめん", count: 3, shop: "バザー", defaultPrice: 2500 },
             { name: "フレッシュトマト", count: 4, shop: "バザー", defaultPrice: 6000 },
-            { name: "デリシャスオイル", count: 10, shop: "店", place: "オルフェア素材屋", price: 200 }
+            { name: "デリシャスオイル", count: 10, shop: "両方", place: "オルフェア素材屋", defaultPrice: 200 }
           ]
         },
         {
           name: "アクロバットケーキ",
           level: "職人Lv 40",
           materials: [
-            { name: "ふわふわ小麦", count: 5, shop: "店", place: "オルフェア素材屋", price: 120 },
+            { name: "ふわふわ小麦", count: 5, shop: "両方", place: "オルフェア素材屋", defaultPrice: 120 },
             { name: "フレッシュトマト", count: 3, shop: "バザー", defaultPrice: 6000 },
-            { name: "デリシャスオイル", count: 10, shop: "店", place: "オルフェア素材屋", price: 200 }
+            { name: "デリシャスオイル", count: 10, shop: "両方", place: "オルフェア素材屋", defaultPrice: 200 }
           ]
         }
       ]
@@ -595,7 +590,7 @@
           materials: [
             { name: "いつくしみのほむら", count: 2, shop: "バザー", defaultPrice: 12000 },
             { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 },
-            { name: "あかいいと", count: 10, shop: "店", place: "各素材屋", price: 80 }
+            { name: "あかいいと", count: 10, shop: "両方", place: "各素材屋", defaultPrice: 80 }
           ]
         }
       ],
@@ -604,9 +599,9 @@
           name: "呪文攻撃耐性 +7% (成功)",
           level: "錬金Lv 40",
           materials: [
-            { name: "まほうのえのぐ", count: 3, shop: "店", place: "ギルド素材屋", price: 300 },
+            { name: "まほうのえのぐ", count: 3, shop: "両方", place: "ギルド素材屋", defaultPrice: 300 },
             { name: "汗と涙の結晶", count: 10, shop: "バザー", defaultPrice: 3800 },
-            { name: "かがみいし", count: 8, shop: "店", place: "各素材屋", price: 200 }
+            { name: "かがみいし", count: 8, shop: "両方", place: "各素材屋", defaultPrice: 200 }
           ]
         }
       ],
@@ -639,7 +634,7 @@
     selectJob.appendChild(opt);
   }
 
-  // フォーム開閉の切り替え処理
+  // フォーム開閉切り替え
   function toggleSelectionForm(showForm) {
     if (showForm) {
       selectionBox.style.display = "block";
@@ -706,14 +701,12 @@
       return;
     }
 
-    // 売価入力欄の初期化
     document.getElementById("sale-price-input").value = "";
 
     const item = CRAFT_DATA[job][cat][idx];
     document.getElementById("res-name").innerText = item.name;
     document.getElementById("res-level").innerText = item.level;
 
-    // 選択された内容をサマリーバナーに設定してフォームを隠す
     summaryText.innerText = `選択中: ${job} ＞ ${cat} ＞ ${item.name}`;
     toggleSelectionForm(false);
 
@@ -724,12 +717,17 @@
       let li = document.createElement("li");
       li.className = "material-item";
 
-      const isShop = mat.shop === "店";
-      const badgeHtml = isShop
-        ? `<span class="badge badge-shop">店</span><span class="shop-info">${mat.place}</span>`
-        : `<span class="badge badge-bazaar">バザー</span>`;
+      // バッジの動的判定（店・バザー・両方）
+      let badgeHtml = "";
+      if (mat.shop === "両方") {
+        badgeHtml = `<span class="badge badge-shop">店</span><span class="badge badge-bazaar">バザー</span><span class="shop-info">${mat.place || ''}</span>`;
+      } else if (mat.shop === "店") {
+        badgeHtml = `<span class="badge badge-shop">店</span><span class="shop-info">${mat.place || ''}</span>`;
+      } else {
+        badgeHtml = `<span class="badge badge-bazaar">バザー</span>`;
+      }
 
-      const unitPrice = isShop ? mat.price : (mat.defaultPrice || 0);
+      const unitPrice = mat.defaultPrice || 0;
 
       li.innerHTML = `
         <div class="mat-top">
@@ -742,7 +740,7 @@
         <div class="calc-row">
           <div class="calc-input-group">
             <label>単価:</label>
-            <input type="number" class="price-input" id="price-${i}" value="${unitPrice}" ${isShop ? 'disabled' : ''} oninput="calculateTotal()">
+            <input type="number" class="price-input" id="price-${i}" value="${unitPrice}" oninput="calculateTotal()">
             <label>G</label>
           </div>
           <span class="subtotal" id="subtotal-${i}">0 G</span>
@@ -755,7 +753,7 @@
     calculateTotal();
   };
 
-  // 自動計算処理（原価＆利益）
+  // 自動計算処理
   function calculateTotal() {
     const job = selectJob.value;
     const cat = selectCategory.value;
@@ -784,16 +782,15 @@
     const profitEl = document.getElementById("profit-price");
 
     if (salePrice > 0) {
-      // バザー手数料（5%）を引いた実収入
       const actualIncome = Math.floor(salePrice * 0.95);
       const profit = actualIncome - grandTotal;
 
       if (profit >= 0) {
         profitEl.innerText = `+${profit.toLocaleString()} G`;
-        profitEl.style.color = "#4ade80"; // 黒字
+        profitEl.style.color = "#4ade80";
       } else {
         profitEl.innerText = `${profit.toLocaleString()} G`;
-        profitEl.style.color = "#f87171"; // 赤字
+        profitEl.style.color = "#f87171";
       }
     } else {
       profitEl.innerText = "0 G";
